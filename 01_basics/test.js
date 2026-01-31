@@ -1,0 +1,1 @@
+console.log("This is a test file for basics. And I am Om Dwivedi.");
