@@ -1,85 +1,118 @@
-// function means jo bhi code humne likha hai 20 ya 300 line ka use ek package me store karke jab bhi ho to copy kar ke use kar sake.
-// function ke andar humne code likha hai usko hum function body kehte hai.
+// // function means jo bhi code humne likha hai 20 ya 300 line ka use ek package me store karke jab bhi ho to copy kar ke use kar sake.
+// // function ke andar humne code likha hai usko hum function body kehte hai.
 
 
-// example 1
+// // example 1
 
-console.log("hello world");
-console.log("hello world");
-console.log("hello world");
-console.log("hello world");
-console.log("hello world");
-
-
-function greet() {
-    console.log("hello world");
-    console.log("hello world");
-    console.log("hello world");
-    console.log("hello world");
-    console.log("hello world");
-
-}
-
-greet() // function call karne ke liye hum function ka naam likhte hai aur uske baad parenthesis lagate hai.
+// console.log("hello world");
+// console.log("hello world");
+// console.log("hello world");
+// console.log("hello world");
+// console.log("hello world");
 
 
+// function greet() {
+//     console.log("hello world");
+//     console.log("hello world");
+//     console.log("hello world");
+//     console.log("hello world");
+//     console.log("hello world");
 
-// example 2
+// }
 
-function addTwoNumbers(num1, num2) {
-    console.log(num1 + num2);  // jab function ke andar humne num1 aur num2 likha hai to usko hum function 'parameters' kehte hai. 
-}
-
-addTwoNumbers(2, 3) // ye ha pe 3 aur 4 ko hum function 'arguments' kehte hai.
-addTwoNumbers(5, "10")
-addTwoNumbers(5, "a")
-
-const result = addTwoNumbers(5, 10) // function ke andar humne console.log(num1 + num2) likha hai to function ke andar humne kuch bhi return nahi kiya hai to function ka result undefined hoga. but the value which is printed in the console is because of console.log(num1 + num2) which is inside the function body.
-
-console.log("Result: ", result)
-
-// another way to write function
+// greet() // function call karne ke liye hum function ka naam likhte hai aur uske baad parenthesis lagate hai.
 
 
-function addTwoNumbers1(num1, num2) {
-    let sum = num1 + num2
-    return sum; // jab hum function ke andar return statement likhte hai to function ke andar jo bhi value return hoti hai usko hum function ka output kehte hai. 
+
+// // example 2
+
+// function addTwoNumbers(num1, num2) {
+//     console.log(num1 + num2);  // jab function ke andar humne num1 aur num2 likha hai to usko hum function 'parameters' kehte hai. 
+// }
+
+// addTwoNumbers(2, 3) // ye ha pe 3 aur 4 ko hum function 'arguments' kehte hai.
+// addTwoNumbers(5, "10")
+// addTwoNumbers(5, "a")
+
+// const result = addTwoNumbers(5, 10) // function ke andar humne console.log(num1 + num2) likha hai to function ke andar humne kuch bhi return nahi kiya hai to function ka result undefined hoga. but the value which is printed in the console is because of console.log(num1 + num2) which is inside the function body.
+
+// console.log("Result: ", result)
+
+// // another way to write function
+
+
+// function addTwoNumbers1(num1, num2) {
+//     let sum = num1 + num2
+//     return sum; // jab hum function ke andar return statement likhte hai to function ke andar jo bhi value return hoti hai usko hum function ka output kehte hai. 
      
-    console.log("This will not be printed");
-    // Note result ke baad koi bhi code likha hai to wo code execute nahi hoga kyunki return statement ke baad function ka execution stop ho jata hai.
+//     console.log("This will not be printed");
+//     // Note result ke baad koi bhi code likha hai to wo code execute nahi hoga kyunki return statement ke baad function ka execution stop ho jata hai.
+// }
+
+// const result1 = addTwoNumbers1(5, 10) // function ke andar humne return sum; likha hai to function ke andar humne sum variable ko return kiya hai to function ka result 15 hoga.
+
+// console.log("Result: ", result1)
+
+
+// // one more way to write function
+
+// const addTwoNumbers2 = function(num1, num2) { // function expression
+//     return num1 + num2;
+// }
+
+// const result2 = addTwoNumbers2(5, 10)
+
+// console.log("Result: ", result2)
+
+
+// function loginUserMessage(username = "om") { // if user not define ho aur if condition not apply.
+//     // if (username === undefined)... ye bhi ek way hai
+//    if(!username) {
+//     console.log("Please provide a username");
+//     return; // agar username nhi hua to undefined return hoga.
+//    }
+//     return `${username} just logged in`  //` ye backticks hote hai jiske andar hum string interpolation kar sakte hai. ${} ke andar hum variable ya expression likh sakte hai jiska result string ke andar print hoga.
+// }
+
+// console.log(loginUserMessage("Hitesh"))
+// console.log(loginUserMessage(""))
+// console.log(loginUserMessage())
+
+
+
+// function calculateBill(...amount){
+//     return amount
+// }
+// // at this time ... this is called rest operator and amount is called rest parameter.
+
+// console.log(calculateBill(20, 30, 40)) // ye function ke andar humne rest parameter use kiya hai jiske wajah se hum multiple arguments pass kar sakte hai aur wo arguments ek array ke form me function ke andar store ho jate hai.
+
+
+const user ={
+    userName: "om",
+    price: 100,
+
 }
 
-const result1 = addTwoNumbers1(5, 10) // function ke andar humne return sum; likha hai to function ke andar humne sum variable ko return kiya hai to function ka result 15 hoga.
+function handleObject(anyobject) {
 
-console.log("Result: ", result1)
-
-
-// one more way to write function
-
-const addTwoNumbers2 = function(num1, num2) { // function expression
-    return num1 + num2;
+    console.log(`userName is ${anyobject.userName} and price is ${anyobject.price}`)
 }
 
-const result2 = addTwoNumbers2(5, 10)
-
-console.log("Result: ", result2)
+handleObject(user) // function ke andar humne object pass kiya hai to function ke andar humne object ke properties ko access kiya hai.
 
 
-function loginUserMessage(username = "om") { // if user not define ho aur if condition not apply.
-    // if (username === undefined)... ye bhi ek way hai
-   if(!username) {
-    console.log("Please provide a username");
-    return; // agar username nhi hua to undefined return hoga.
-   }
-    return `${username} just logged in`  //` ye backticks hote hai jiske andar hum string interpolation kar sakte hai. ${} ke andar hum variable ya expression likh sakte hai jiska result string ke andar print hoga.
-}
+handleObject({
+    userName: "hitesh",
+     price: 200}) // function ke andar humne object pass kiya hai to function ke andar humne object ke properties ko access kiya hai.
 
-console.log(loginUserMessage("Hitesh"))
-console.log(loginUserMessage(""))
-console.log(loginUserMessage())
+     const myNewArray = [200, 400, 600, 800]
+     function returnArray(anyarray) {
+        return anyarray 
+        }
+     
+    
+     console.log(returnArray(myNewArray)) // function ke andar humne array pass kiya hai to function ke andar humne array ko return kiya hai.
+     console.log(returnArray([100, 300, 500, 700])) // function ke andar humne array pass kiya hai to function ke andar humne array ko return kiya hai.
 
-
-
-function calculateBill(...amount){
-    re
-}
+ 
