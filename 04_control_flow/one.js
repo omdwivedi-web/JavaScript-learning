@@ -13,7 +13,7 @@ const temperature = 30;
 
 // >, <, >=, <=, ==, === (to check ), !=, !==
 
-const score = 100;
+const score = 200;
 
 // if (score > 90) {
 //     const pizza = "🍕"
