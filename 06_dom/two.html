@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom | Two</title>
+</head>
+<body style="color: rgb(3, 6, 6);">
+   <div class="parent">
+    <!-- This is comment -->
+    <div class="day">Monday</div>
+    <div class="day">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day">Thursday</div>
+     </div>
+        
+     </body>
+   <script>
+    const parent = document.querySelector('.parent');
+    console.log(parent);
+    console.log(parent.children); // it will give us the HTML collection
+    
+    for(let i=0; i<parent.children.length; i++){
+        console.log(parent.children[i].innerText);
+    }
+    
+    parent.children[1].style.color = 'red';
+    parent.children[1].style.padding = '10px';
+    console.log(parent.firstElementChild); // it will give us the first element child
+    console.log(parent.lastElementChild); // it will give us the last element child
+    
+    const dayOne = document.querySelector('.day');
+    // console.log(dayOne);
+    // console.log(dayOne.nextElementSibling);
+    // console.log(dayOne.parentElement);
+
+
+    console.log("NODES: " ,parent.childNodes); // it will give us the node list
+
+</script>
+</html>
